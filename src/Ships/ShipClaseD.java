@@ -51,7 +51,7 @@ public class ShipClaseD extends Ship implements IMannedShip2{
  */
     @Override
     public void RepairAndMaintenance() {
-        if(dock){
+        if(getDock()){
             System.out.println("Acomple y mantenimiento de "+getSatelite());
         }
         else{

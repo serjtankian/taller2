@@ -54,34 +54,26 @@ public class ShipClaseB extends Ship implements IMannedShip{
  */
     @Override
     public void approachToLunarOrbit() {
-        if(lunarModuleReady){
             System.out.println("Iniciar arrivo de superficie lunar");
         }
-        else{
-            System.out.println("Modulo lunar presenta fallo");
-        }
-    }
+       
+    
 /**
  * Metodo abstracto implementado desde la interface IMannedShip y sobrescrito.
  * Toma los valores actuales de mision y lunarModuleReady y realiza un condicional.
  */
     @Override
     public void lunarSurfaceLanding() {
-        if(lunarModuleReady){
           System.out.println("Procediendo con la mision: "+getMission());
-         }
-        else{
-            System.out.println("Iniciar manenimiento de modulo lunar antes de proceder con la misión "+getMission());
-        }
      
     }
-    /**
-     * Actualiza el valor booleano de lunarModuleReady
-     * @param lunarModuleReady valor  del modulo lunar
-     */
-    public void setLunarModuleReady(Boolean lunarModuleReady) {
+    public void setLunarModuleReady(boolean lunarModuleReady) {
         this.lunarModuleReady = lunarModuleReady;
     }
+    public boolean getLunarModuleReady(){
+        return lunarModuleReady;
+    }
+ 
     /**
      * Actualiza el valor de la tripulacion.
      * @param crewCapacity cantidad de miembros de la tripulacion
