@@ -60,13 +60,13 @@ try (/**
                   System.out.println("tipo de combustible");
                   typeOfFuil=br.readLine();
                   System.out.println("ingrese misión");
-                  mission= read.nextLine();
-                  System.out.println("ingrese f o v");
-                  Boolean dock=read.nextBoolean();
+                  mission= read.next();
+                  System.out.println("iniciar acomple con satelite? true/false");
+                  Boolean attached =read.nextBoolean();
                   System.out.println("ingrese satélite a abordar");
-                  String satelite=read.nextLine();
-                  ShipClaseD claseD=new ShipClaseD(power, speed, push, weight,typeOfFuil, mission, dock, satelite);
-                             claseD.RepairAndMaintenance();
+                  String satelite=br.readLine();
+                  ShipClaseD claseD=new ShipClaseD(power, speed, push, weight,typeOfFuil, mission, attached , satelite);
+                             claseD.repairAndMaintenance();
     
                       break;
                   case 2:
@@ -83,10 +83,9 @@ try (/**
                   System.out.println("ingrese misión");
                   mission= br.readLine();
                   System.out.println("¿el módulo lunar está listo para aterrizar? true/false");
-                  Boolean lunarModuleReady=read.nextBoolean();
                   System.out.println("capacidad para transportar tripulación");
                   int crewCapacity=read.nextInt();
-                  ShipClaseB claseB=new ShipClaseB(power, speed, push, weight, typeOfFuil, mission, lunarModuleReady, crewCapacity);
+                  ShipClaseB claseB=new ShipClaseB(power, speed, push, weight, typeOfFuil, mission, crewCapacity);
                             claseB.approachToLunarOrbit();
                             claseB.lunarSurfaceLanding();
                       break;
@@ -120,11 +119,12 @@ try (/**
                   System.out.println("ingrese weight");
                   weight= read.nextFloat();
                   System.out.println("ingrese tipo de combustible");
-                  typeOfFuil=read.nextLine();
+                  typeOfFuil=read.next();
                   System.out.println("ingrese misión");
-                  mission= read.nextLine();
+                  mission= read.next();
                   System.out.println("altura maxima alcanzada");
                   int maximumHeight=read.nextInt();
+                 
         
                   ShipClaseC claseC=new ShipClaseC(power, speed, push, weight, typeOfFuil, mission, maximumHeight);
                       break;
